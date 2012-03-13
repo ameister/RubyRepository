@@ -1,0 +1,21 @@
+<p>
+  <b>Cart name:</b>
+  <%= @cart.name %>
+</p>
+
+<p id="notice"><%= notice %></p>
+
+
+<!-- Display items of an order -->
+<h2>Items</h2>
+<% @cart.cart_pos.each do |cart_po| %>
+  <p>
+    <b>Item name:</b>
+    <%= cart_po.totalPrice%>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
+<%= link_to 'Show Items', cart_cart_pos_path(@cart) %>

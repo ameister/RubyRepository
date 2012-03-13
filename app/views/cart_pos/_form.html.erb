@@ -1,0 +1,35 @@
+<%= form_for([@cart, @cart_po]) do |f| %>
+  <% if @cart_po.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cart_po.errors.count, "error") %> prohibited this cart_po from being saved:</h2>
+
+      <ul>
+        <% @cart_po.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h2>Cartpo in <%= @cart.name %></h2>
+
+  <div class="field">
+    <%= f.label :pos %><br />
+    <%= f.number_field :pos %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :totalPrice %><br />
+    <%= f.text_field :totalPrice %>
+  </div>
+  <div class="field">
+    <%= f.label :totalPrice %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create"%>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Cartpos in <%= @cart.name %></h1>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pos:</b>
+  <%= @cart_po.pos %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @cart_po.amount %>
+</p>
+
+<p>
+  <b>Totalprice:</b>
+  <%= @cart_po.totalPrice %>
+</p>
+
+
+<%= link_to 'Edit', edit_cart_po_path(@cart_po) %> |
+<%= link_to 'Back', cart_pos_path(@cart) %>

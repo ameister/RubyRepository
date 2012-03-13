@@ -1,0 +1,21 @@
+<h1>Cartpos in <%= @cart.name %></h1>
+
+<table>
+  <tr>
+    <th>cart_po name</th>
+  </tr>
+
+<% for cart_po in @cart_pos %>
+  <tr>
+    <td><%= cart_po.totalPrice %></td>
+    <td><%= link_to 'Show', cart_cart_po_path(@cart, cart_po) %></td>
+    <td><%= link_to 'Edit', edit_cart_cart_po_path(@cart, cart_po) %></td>
+    <td><%= link_to 'Destroy', cart_cart_po_path(@cart, cart_po), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cart_po', new_cart_cart_po_path(@cart) %>
+<%= link_to 'Back to cart', @cart %>
